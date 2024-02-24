@@ -24,16 +24,17 @@ User Function M410STTS()
 
 	Local aArea := SC5->(GetArea())
 	Local nOper := ParamIXB[1]
+	Local cMsg  := ''
 
 	If  (nOper == 5)
 	
-		CMsg := AllTrim(C5_ZZOBSE) + "Usuário da Exclusão do Pedido.: " + cValToChar(UsrRetName(__cUserID)) + " " ;
-									  + cValToChar(Date()) + " " + cValToChar(Time() + Chr(13) + Chr(10))
+		cMsg := AllTrim(C5_ZZOBSE) + "Usuário da Exclusão do Pedido.: " + cValToChar(UsrRetName(__cUserID)) + " " ;
+									  + cValToChar(Date()) + " " + cValToChar(Time())
 
 				dbSelectArea('SC5')
 				Reclock('SC5', .F.)
-				Replace C5_ZZOBSE With cMsg
-				SC5->(MsUnLock())
+				SC5-> C5_ZZOBSE := cMsg
+				SC5-> (MsUnLock())
 				DbCloseArea()
 
 	EndIf
