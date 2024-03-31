@@ -3,10 +3,10 @@
 
  /*
 {Protheus.doc} MBRSA2
-@author Wesley FranÁa
+@author Wesley Fran√ßa
 @since 12/01/2024
 @version 1.0
-@Description: Tela Mbrowse Com Legenda e Mensagens nas Rotinas de InteraÁ„o Padr„o
+@Description: Tela Mbrowse Com Legenda e Mensagens nas Rotinas de Intera√ß√£o Padr√£o
 */
 
 User Function MBRSA2()
@@ -50,7 +50,7 @@ User Function MBRSA2()
 Return
 
 /*-------------------------------------------
-    FunÁ„o BInclui - Inclus„o
+    Fun√ß√£o BInclui - Inclus√£o
 -------------------------------------------*/
 
 User Function BInclui(cAlias, nReg, nOpc)
@@ -61,17 +61,17 @@ User Function BInclui(cAlias, nReg, nOpc)
 
         If nOpcao == 1 
 
-            MsgInfo("Inclus„o Efetuada Com Sucesso!")
+            MsgInfo("Inclus√£o Efetuada Com Sucesso!")
         
         Else
-            MsgAlert("Inclus„o Cancelada!")
+            MsgAlert("Inclus√£o Cancelada!")
         
         EndIf
 
 Return
 
 /*-------------------------------------------
-    FunÁ„o BAltera - AlteraÁ„o
+    Fun√ß√£o BAltera - Altera√ß√£o
 -------------------------------------------*/
 
 User Function BAltera(cAlias, nReg, nOpc)
@@ -81,17 +81,17 @@ User Function BAltera(cAlias, nReg, nOpc)
           nOpcao := AxAltera(cAlias, nReg, nOpc)
 
         If nOpcao == 1 
-            MsgInfo("AlteraÁ„o Efetuada Com Sucesso!")
+            MsgInfo("Altera√ß√£o Efetuada Com Sucesso!")
         
         Else
-            MsgAlert("AlteraÁ„o Cancelada!")
+            MsgAlert("Altera√ß√£o Cancelada!")
         
         EndIf
 
 Return
 
 /*-------------------------------------------
-    FunÁ„o BDeleta - Exclus„o
+    Fun√ß√£o BDeleta - Exclus√£o
 -------------------------------------------*/
 
 User Function BDeleta(cAlias, nReg, nOpc)
@@ -102,7 +102,7 @@ User Function BDeleta(cAlias, nReg, nOpc)
         If nOpcao == 2
 
         
-        		CMsg := AllTrim(A2_CONTATO) + "Usu·rio da Exclus„o do Pedido.: " + cValToChar(UsrRetName(__cUserID)) + " " ;
+        		CMsg := AllTrim(A2_CONTATO) + "Usu√°rio da Exclus√£o.: " + cValToChar(UsrRetName(__cUserID)) + " " ;
 									  + cValToChar(Date()) + " " + cValToChar(Time() + Chr(13) + Chr(10))
 
 				dbSelectArea('SA2')
@@ -111,28 +111,28 @@ User Function BDeleta(cAlias, nReg, nOpc)
 				SA2->(MsUnLock())
 				DbCloseArea()
 
-            MsgInfo("Exclus„o Efetuada Com Sucesso!")
+            MsgInfo("Exclus√£o Efetuada Com Sucesso!")
         
         Else
-            MsgAlert("Exclus„o Cancelada!")
+            MsgAlert("Exclus√£o Cancelada!")
         
         EndIf
 
    Return
 
 /*-------------------------------------------
-    FunÁ„o BLegenda - Legendas
+    Fun√ß√£o BLegenda - Legendas
 -------------------------------------------*/
 
 User Function BLegenda()
 
 Local aLegenda := {}
 
-    AADD(aLegenda, {"BR_VERDE", "Pessoal FÌsica"    })
-    AADD(aLegenda, {"BR_AMARELO", "Pessoal JurÌdica"})
-    AADD(aLegenda, {"BR_LARANJA", "ExportaÁ„o"      })
+    AADD(aLegenda, {"BR_VERDE", "Pessoal F√≠sica"    })
+    AADD(aLegenda, {"BR_AMARELO", "Pessoal Jur√≠dica"})
+    AADD(aLegenda, {"BR_LARANJA", "Exporta√ß√£o"      })
     AADD(aLegenda, {"BR_MARROM", "Fornecedor Rural" })
-    AADD(aLegenda, {"BR_PRETO", "N„o Classificado"  })
+    AADD(aLegenda, {"BR_PRETO", "N√£o Classificado"  })
 
     BrwLegenda(cCadastro, "Legenda ", aLegenda )
     
